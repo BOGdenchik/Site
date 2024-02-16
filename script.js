@@ -7,6 +7,7 @@ let openmodal4 = document.querySelector('.openmodal4')
 let limit_button = document.querySelector('.limit_button')
 let call_button = document.querySelector('.call_button')
 let call_button_1 = document.querySelector('.call_button_1')
+let call_row = document.querySelector('.call_row')
 
 
 openmodal1.addEventListener('click', ()=>{
@@ -165,9 +166,11 @@ window.addEventListener('keydown', (event) => {
 call_button.addEventListener('click', () => {
     call_button.classList.remove('show');
     call_button_1.classList.add('show');
+    call_row.classList.add('show')
 })
 call_button_1.addEventListener('click', () => {
     call_button_1.classList.remove('show');
     call_button.classList.add('show');
+    call_row.classList.remove('show')
 })
 

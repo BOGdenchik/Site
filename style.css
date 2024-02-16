@@ -634,6 +634,65 @@ a {
 .call_button.show {
     display: flex;
 }
+.call_row{
+    background-color: #ffffff;
+    margin-left: -230px;
+    margin-top: -430px;
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    display: block;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    display: none;
+    transition: 0.75s ease-in-out;
+    animation: callrow 0.75s ease-in-out;
+}
+@keyframes callrow {
+    0% {
+        opacity: 0;
+    }
+    25%{
+        opacity: 0.25;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    75%{
+        opacity: 0.75;
+    }
+    100%{
+        opacity:1;
+    }
+}
+.call_row.show {
+    display: flex;
+}
+.call_row_chat{
+    width: 300px;
+    height: 70px;
+    background-color: rgb(255, 0, 0, 0.5);
+    border: 1px solid red;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Inika', serif;
+    font-size: larger;
+}
+.chat_image{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.chat_img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-position: center;
+}
 .call_button_1{
     background-color: #ff0000;
     width: 65px;
