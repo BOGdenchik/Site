@@ -470,12 +470,25 @@ a {
     justify-content: space-around;
     padding: 1vw;
     overflow: hidden;
+    animation: modalcard 1s ease-in-out;
+}
+@keyframes modalcard {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 .modal_movie_overwrite{
     width: 90%;
     height: 90%;
     color: #fff;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 
 }
@@ -522,7 +535,6 @@ a {
     width: 350px;
     height: 600px;
     color: #000000;
-    background-color: gray;
     text-align: center;
     border-radius: 2px ;
     font-family: 'Inika', serif;
@@ -532,7 +544,6 @@ a {
     width: 350px;
     height: 600px;
     color: #000000;
-    background-color: gray;
     text-align: center;
     border-radius: 2px ;
     font-family: 'Inika', serif;
@@ -737,7 +748,6 @@ a {
 .modal_t{
     width: 250px;
     height: 175px;
-    background-color: grey;
     display: flex;
     flex-direction: column;
     align-items: center;

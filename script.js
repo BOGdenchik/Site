@@ -8,6 +8,7 @@ let limit_button = document.querySelector('.limit_button')
 let call_button = document.querySelector('.call_button')
 let call_button_1 = document.querySelector('.call_button_1')
 let call_row = document.querySelector('.call_row')
+let audio1 = document.querySelector('.audio1')
 
 
 openmodal1.addEventListener('click', ()=>{
@@ -133,14 +134,34 @@ limit_button.addEventListener('click', ()=>{
     document.body.classList.add('stop-scrolling2');
     modal2.innerHTML = `
     <div class="modal_card">
-        <p>Multi-Voyage</p>
+        <p>Выгодные предложения для отдыха</p>
         <div class="modal_movie_overwrite">
-        <div class="modal_img1"></div>
-        <div class="modal_text"> 
-        Multi-Voyage подразумевает возможность путешевствовать различными видами транспорта.
-        Если вы хотите максимально сократить время и получить доступ к удаленным местам, лучшим выбором будет воздушный транспорт.
-        Если же вы ищете глубокое погружение в культуру и природу, рекомендуется использовать наземный транспорт. В конечном счете, путешествия подразумевают исследование и открытие новых мест, что делает и возможным просмотра света совершенно разными способами.
+        <div class="modal_block">
+            <div class="modal_img">
+                <img src="sliderimg/Flag_of_the_United_Arab_Emirates.svg.png" alt="image" class="modal_image">
+            </div>
+            <div class="modal_t">
+            <p>ОАЭ</p>
+            <p>Популярен пляжный отдых на побережье лазурного моря или синего океана.</p>
+            </div>
         </div>
+        <div class="modal_block">
+        <div class="modal_img">
+                <img src="sliderimg/turkeyflag.jpg" alt="image" class="modal_image">
+            </div>
+            <div class="modal_t">
+            <p>Турция</p>
+            <p>Считается одним из самых экономичных курортов для отдыха в бархатный сезон и в начале лета.</p>
+            </div>
+            </div>
+        <div class="modal_block">
+        <div class="modal_img">
+                <img src="sliderimg/flag-greciya-sinij-belyj.jpg" alt="image" class="modal_image">
+            </div>
+            <div class="modal_t">
+            <p>Билеты</p>
+            <p>Страна долгожителей. Прекрасное питание, вкусное вино и лечебные процедуры.</p>
+            </div></div>
         </div>
         <button class="modal_button_close2">Закрыть</button>
     </div>
@@ -166,11 +187,12 @@ window.addEventListener('keydown', (event) => {
 call_button.addEventListener('click', () => {
     call_button.classList.remove('show');
     call_button_1.classList.add('show');
-    call_row.classList.add('show')
+    call_row.classList.add('show');
+    audio1.play();
 })
 call_button_1.addEventListener('click', () => {
     call_button_1.classList.remove('show');
     call_button.classList.add('show');
-    call_row.classList.remove('show')
+    call_row.classList.remove('show');
+    audio1.pause();
 })
-
