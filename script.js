@@ -1,14 +1,24 @@
 const modal = document.querySelector('.modal');
-const modal2 = document.querySelector('.modal2')
-let openmodal1 = document.querySelector('.openmodal1')
-let openmodal2 = document.querySelector('.openmodal2')
-let openmodal3 = document.querySelector('.openmodal3')
-let openmodal4 = document.querySelector('.openmodal4')
-let limit_button = document.querySelector('.limit_button')
-let call_button = document.querySelector('.call_button')
-let call_button_1 = document.querySelector('.call_button_1')
-let call_row = document.querySelector('.call_row')
-let audio1 = document.querySelector('.audio1')
+const modal2 = document.querySelector('.modal2');
+const modal3 = document.querySelector('.modal3');
+const modal4 = document.querySelector('.modal4')
+let modal6 = document.querySelector('.modal6');
+let openmodal1 = document.querySelector('.openmodal1');
+let openmodal2 = document.querySelector('.openmodal2');
+let openmodal3 = document.querySelector('.openmodal3');
+let openmodal4 = document.querySelector('.openmodal4');
+let limit_button = document.querySelector('.limit_button');
+let call_button = document.querySelector('.call_button');
+let call_button_1 = document.querySelector('.call_button_1');
+let call_row = document.querySelector('.call_row');
+let audio1 = document.querySelector('.audio1');
+let board_button = document.querySelector('.board_button');
+let price = document.querySelector('.price');
+let sub_submit = document.querySelector('.sub_submit');
+let name = document.getElementById('name');
+let email = document.getElementById('email');
+let bus_button = document.querySelector('.bus_button')
+
 
 
 openmodal1.addEventListener('click', ()=>{
@@ -178,7 +188,7 @@ window.addEventListener('click', (event) => {
     if (event.target == modal2) {
     closeModal2();
     }
-})
+});
 window.addEventListener('keydown', (event) => {
     if (event.keyCode == 27) {
     closeModal2();
@@ -189,10 +199,174 @@ call_button.addEventListener('click', () => {
     call_button_1.classList.add('show');
     call_row.classList.add('show');
     audio1.play();
-})
+});
 call_button_1.addEventListener('click', () => {
     call_button_1.classList.remove('show');
     call_button.classList.add('show');
     call_row.classList.remove('show');
     audio1.pause();
-})
+});
+board_button.addEventListener('click', () => {
+    if (document.getElementById('1.1').value == 1
+    && document.getElementById('1.2').value == 1
+    && document.getElementById('1.3').value == 1
+    && document.getElementById('1.4').value == 1)
+    price.innerHTML = 'от 1200 Br'
+});
+board_button.addEventListener('click', () => {
+    if (document.getElementById('1.1').value == 2
+    && document.getElementById('1.2').value == 2
+    && document.getElementById('1.3').value == 2
+    && document.getElementById('1.4').value == 2)
+    price.innerHTML = 'от 1800 Br'
+});
+board_button.addEventListener('click', () => {
+    if (document.getElementById('1.1').value == 3
+    && document.getElementById('1.2').value == 3
+    && document.getElementById('1.3').value == 3
+    && document.getElementById('1.4').value == 3)
+    price.innerHTML = 'от 2400 Br'
+});
+board_button.addEventListener('click', () => {
+    if (document.getElementById('1.1').value == 3
+    && document.getElementById('1.2').value == 4
+    && document.getElementById('1.3').value == 4
+    && document.getElementById('1.4').value == 3)
+    price.innerHTML = 'от 2700 Br'
+});
+board_button.addEventListener('click', () => {
+    if (document.getElementById('1.1').value == 3
+    && document.getElementById('1.2').value == 5
+    && document.getElementById('1.3').value == 4
+    && document.getElementById('1.4').value == 3)
+    price.innerHTML = 'от 3100 Br'
+});
+board_button.addEventListener('click', () => {
+    if (document.getElementById('1.1').value == 1
+    && document.getElementById('1.2').value == 2
+    && document.getElementById('1.3').value == 3
+    && document.getElementById('1.4').value == 3)
+    price.innerHTML = 'от 1600 Br'
+});
+sub_submit.addEventListener('click', () => {
+    if (name.value && email.value)
+    modal6.classList.add('show')
+    closeWindow()
+});
+function closeWindow() {
+    setTimeout(function() {
+    modal6.classList.remove('show');
+    }, 3000);
+    }
+
+bus_button.addEventListener('click', ()=>{
+    modal3.classList.add('show');
+    document.body.classList.add('stop-scrolling2');
+    modal3.innerHTML = `
+        <div class="modal_card">
+            <p>Выгодные предложения для отдыха</p>
+            <div class="modal_movie_overwrite">
+            <div class="modal_block">
+                <div class="modal_img">
+                    <img src="sliderimg/Flag_of_the_United_Arab_Emirates.svg.png" alt="image" class="modal_image">
+                </div>
+                <div class="modal_t">
+                <p>ОАЭ</p>
+                <p>Популярен пляжный отдых на побережье лазурного моря или синего океана.</p>
+                </div>
+            </div>
+            <div class="modal_block">
+            <div class="modal_img">
+                    <img src="sliderimg/turkeyflag.jpg" alt="image" class="modal_image">
+                </div>
+                <div class="modal_t">
+                <p>Турция</p>
+                <p>Считается одним из самых экономичных курортов для отдыха в бархатный сезон и в начале лета.</p>
+                </div>
+                </div>
+            <div class="modal_block">
+            <div class="modal_img">
+                    <img src="sliderimg/flag-greciya-sinij-belyj.jpg" alt="image" class="modal_image">
+                </div>
+                <div class="modal_t">
+                <p>Билеты</p>
+                <p>Страна долгожителей. Прекрасное питание, вкусное вино и лечебные процедуры.</p>
+                </div></div>
+            </div>
+            <button class="modal_button_close3">Закрыть</button>
+        </div>
+    `;
+    const btnClose = document.querySelector('.modal_button_close3');
+    btnClose.addEventListener('click', () => {closeModal3()});
+});
+function closeModal3() {
+    modal3.classList.remove('show');
+    document.body.classList.remove('stop-scrolling2');
+}
+window.addEventListener('click', (event) => {
+    if (event.target == modal3) {
+    closeModal3();
+    }
+});
+window.addEventListener('keydown', (event) => {
+    if (event.keyCode == 27) {
+    closeModal3();
+    }
+});
+limit_button.addEventListener('click', ()=>{
+    modal4.classList.add('show');
+    document.body.classList.add('stop-scrolling2');
+    modal4.innerHTML = `
+    <div class="modal_card">
+        <p>Выгодные предложения для отдыха</p>
+        <div class="modal_movie_overwrite">
+        <div class="modal_block">
+            <div class="modal_img">
+                <img src="sliderimg/Flag_of_the_United_Arab_Emirates.svg.png" alt="image" class="modal_image">
+            </div>
+            <div class="modal_t">
+            <p>ОАЭ</p>
+            <p>Популярен пляжный отдых на побережье лазурного моря или синего океана.</p>
+            </div>
+        </div>
+        <div class="modal_block">
+        <div class="modal_img">
+                <img src="sliderimg/turkeyflag.jpg" alt="image" class="modal_image">
+            </div>
+            <div class="modal_t">
+            <p>Турция</p>
+            <p>Считается одним из самых экономичных курортов для отдыха в бархатный сезон и в начале лета.</p>
+            </div>
+            </div>
+        <div class="modal_block">
+        <div class="modal_img">
+                <img src="sliderimg/flag-greciya-sinij-belyj.jpg" alt="image" class="modal_image">
+            </div>
+            <div class="modal_t">
+            <p>Билеты</p>
+            <p>Страна долгожителей. Прекрасное питание, вкусное вино и лечебные процедуры.</p>
+            </div></div>
+        </div>
+        <button class="modal_button_close4">Закрыть</button>
+    </div>
+`;
+const btnClose = document.querySelector('.modal_button_close4');
+btnClose.addEventListener('click', () => {closeModal4()});
+});
+
+function closeModal4() {
+    modal4.classList.remove('show');
+    document.body.classList.remove('stop-scrolling2');
+}
+window.addEventListener('click', (event) => {
+    if (event.target == modal4) {
+    closeModal4();
+    }
+});
+window.addEventListener('keydown', (event) => {
+    if (event.keyCode == 27) {
+    closeModal4();
+    }
+});
+
+
