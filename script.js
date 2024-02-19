@@ -8,6 +8,7 @@ let openmodal2 = document.querySelector('.openmodal2');
 let openmodal3 = document.querySelector('.openmodal3');
 let openmodal4 = document.querySelector('.openmodal4');
 let limit_button = document.querySelector('.limit_button');
+let limit_button2 = document.querySelector('.limit_button2');
 let call_button = document.querySelector('.call_button');
 let call_button_1 = document.querySelector('.call_button_1');
 let call_row = document.querySelector('.call_row');
@@ -17,7 +18,11 @@ let price = document.querySelector('.price');
 let sub_submit = document.querySelector('.sub_submit');
 let name = document.getElementById('name');
 let email = document.getElementById('email');
-let bus_button = document.querySelector('.bus_button')
+let bus_button = document.querySelector('.bus_button');
+let modal_block1 = document.querySelector('.modal_block1');
+let modal_block2 = document.querySelector('.modal_block2');
+let modal_block3 = document.querySelector('.modal_block3');
+
 
 
 
@@ -169,10 +174,11 @@ limit_button.addEventListener('click', ()=>{
                 <img src="sliderimg/flag-greciya-sinij-belyj.jpg" alt="image" class="modal_image">
             </div>
             <div class="modal_t">
-            <p>Билеты</p>
+            <p>Греция</p>
             <p>Страна долгожителей. Прекрасное питание, вкусное вино и лечебные процедуры.</p>
             </div></div>
         </div>
+        
         <button class="modal_button_close2">Закрыть</button>
     </div>
 `;
@@ -256,7 +262,7 @@ sub_submit.addEventListener('click', () => {
 function closeWindow() {
     setTimeout(function() {
     modal6.classList.remove('show');
-    }, 3000);
+    }, 5000);
     }
 
 bus_button.addEventListener('click', ()=>{
@@ -313,7 +319,7 @@ window.addEventListener('keydown', (event) => {
     closeModal3();
     }
 });
-limit_button.addEventListener('click', ()=>{
+limit_button2.addEventListener('click', ()=>{
     modal4.classList.add('show');
     document.body.classList.add('stop-scrolling2');
     modal4.innerHTML = `
@@ -322,28 +328,28 @@ limit_button.addEventListener('click', ()=>{
         <div class="modal_movie_overwrite">
         <div class="modal_block">
             <div class="modal_img">
-                <img src="sliderimg/Flag_of_the_United_Arab_Emirates.svg.png" alt="image" class="modal_image">
+                <img src="img/cuba.png" alt="image" class="modal_image">
             </div>
             <div class="modal_t">
-            <p>ОАЭ</p>
+            <p>Куба</p>
             <p>Популярен пляжный отдых на побережье лазурного моря или синего океана.</p>
             </div>
         </div>
         <div class="modal_block">
         <div class="modal_img">
-                <img src="sliderimg/turkeyflag.jpg" alt="image" class="modal_image">
+                <img src="img/abhazia.png" alt="image" class="modal_image">
             </div>
             <div class="modal_t">
-            <p>Турция</p>
+            <p>Абхазия</p>
             <p>Считается одним из самых экономичных курортов для отдыха в бархатный сезон и в начале лета.</p>
             </div>
             </div>
         <div class="modal_block">
         <div class="modal_img">
-                <img src="sliderimg/flag-greciya-sinij-belyj.jpg" alt="image" class="modal_image">
+                <img src="img/vietnam.jpg" alt="image" class="modal_image">
             </div>
             <div class="modal_t">
-            <p>Билеты</p>
+            <p>Вьетнам</p>
             <p>Страна долгожителей. Прекрасное питание, вкусное вино и лечебные процедуры.</p>
             </div></div>
         </div>
@@ -368,5 +374,3 @@ window.addEventListener('keydown', (event) => {
     closeModal4();
     }
 });
-
-
